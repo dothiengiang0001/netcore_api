@@ -16,8 +16,9 @@ services:
       context: .
       dockerfile: ./src/TeduBlog.Api/Dockerfile
     environment:
-      ASPNETCORE_ENVIRONMENT: "Development"
-      ConnectionStrings__DefaultConnection: "Server=sqlserver;Database=TeduBlog;User=sa;Password=1236fG543$;TrustServerCertificate=true;"
+      - ASPNETCORE_ENVIRONMENT=Development
+      - ASPNETCORE_URLS=http://+:80
+      - "DatabaseSettings:DefaultConnection=Server=sqlserver;Port=3306;Database=TeduBlog;Uid=root;Pwd=Passw0rd!"
     ports:
       - "8080:80"
     depends_on:
@@ -28,10 +29,12 @@ services:
       context: .
       dockerfile: ./src/TeduBlog.WebApp/Dockerfile
     environment:
-      ASPNETCORE_ENVIRONMENT: "Development"
-      ConnectionStrings__DefaultConnection: "Server=sqlserver;Database=TeduBlog;User=sa;Password=1236fG543$;TrustServerCertificate=true;"
+      - ASPNETCORE_ENVIRONMENT=Development
+      - ASPNETCORE_URLS=http://+:80
+      - "DatabaseSettings:DefaultConnection=Server=sqlserver;Port=3306;Database=TeduBlog;Uid=root;Pwd=Passw0rd!"
     ports:
       - "8081:80"
+    restart: always
     depends_on:
       - sqlserver
 
