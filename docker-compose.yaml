@@ -18,7 +18,7 @@ services:
     environment:
       - ASPNETCORE_ENVIRONMENT=Development
       - ASPNETCORE_URLS=http://+:80
-      - "DatabaseSettings:DefaultConnection=Server=sqlserver;Port=3306;Database=TeduBlog;Uid=root;Pwd=Passw0rd!"
+      - "DatabaseSettings:DefaultConnection=Server=sqlserver;Database=TeduBlog;User Id=sa;Password=1236fG543$!;Multipleactiveresultsets=true"
     ports:
       - "8080:80"
     depends_on:
@@ -31,7 +31,7 @@ services:
     environment:
       - ASPNETCORE_ENVIRONMENT=Development
       - ASPNETCORE_URLS=http://+:80
-      - "DatabaseSettings:DefaultConnection=Server=sqlserver;Port=3306;Database=TeduBlog;Uid=root;Pwd=Passw0rd!"
+      - "DatabaseSettings:DefaultConnection=Server=sqlserver;Database=TeduBlog;User Id=sa;Password=1236fG543$!;Multipleactiveresultsets=true"
     ports:
       - "8081:80"
     restart: always
