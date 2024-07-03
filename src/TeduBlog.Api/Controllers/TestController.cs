@@ -5,7 +5,6 @@ namespace TeduBlog.Api.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    [Authorize]
     public class TestController : ControllerBase
     {
         [HttpGet]
