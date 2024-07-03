@@ -10,6 +10,7 @@ services:
       - "1433:1433"
     volumes:
       - sql_data:/var/opt/mssql
+    restart: always
 
   tedublog-api:
     build:
@@ -18,7 +19,7 @@ services:
     environment:
       - ASPNETCORE_ENVIRONMENT=Development
       - ASPNETCORE_URLS=http://+:80
-      - "DatabaseSettings:DefaultConnection=Server=sqlserver;Database=TeduBlog;User Id=sa;Password=1236fG543$;Multipleactiveresultsets=true"
+      - "DatabaseSettings:DefaultConnection=Server=sqlserver;Database=TeduBlog;User Id=sa;Password=1236fG543$;Trusted_Connection=False;MultipleActiveResultSets=true"
     ports:
       - "8080:80"
     depends_on:
@@ -31,7 +32,7 @@ services:
     environment:
       - ASPNETCORE_ENVIRONMENT=Development
       - ASPNETCORE_URLS=http://+:80
-      - "DatabaseSettings:DefaultConnection=Server=sqlserver;Database=TeduBlog;User Id=sa;Password=1236fG543$;Multipleactiveresultsets=true"
+      - "DatabaseSettings:DefaultConnection=Server=sqlserver;Database=TeduBlog;User Id=sa;Password=1236fG543$;Trusted_Connection=False;MultipleActiveResultSets=true"
     ports:
       - "8081:80"
     restart: always
