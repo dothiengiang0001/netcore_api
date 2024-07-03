@@ -5,10 +5,10 @@ services:
     container_name: sqlserver
     image: mcr.microsoft.com/mssql/server:2019-latest
     environment:
-      MSSQL_SA_PASSWORD: "1236fG543$"
+      SA_PASSWORD: "1236fG543$"
       ACCEPT_EULA: "Y"
     ports:
-      - "1435:1433"
+      - "1434:1433"
     volumes:
       - sql_data:/var/opt/mssql
     restart: always
