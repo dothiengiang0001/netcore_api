@@ -12,7 +12,7 @@ COPY ["src/TeduBlog.Core/TeduBlog.Core.csproj", "src/TeduBlog.Core/"]
 COPY ["src/TeduBlog.Data/TeduBlog.Data.csproj", "src/TeduBlog.Data/"]
 RUN dotnet restore "./src/TeduBlog.Api/./TeduBlog.Api.csproj"
 COPY . .
-WORKDIR "/src/src/TeduBlog.Api"
+WORKDIR "/srcTeduBlog.Api"
 RUN dotnet build "./TeduBlog.Api.csproj" -c $BUILD_CONFIGURATION -o /app/build
 
 FROM build AS publish
